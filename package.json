@@ -1,0 +1,11 @@
+{
+  "name": "unixtime",
+  "version": "1.0.0",
+  "description": " Simple app to convert unix timestamp - for Mac, Windows and Linux ",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jamsouf/unixtime.git"
+  },
+  "license": "MIT",
+  "main": "main.js"
+}
