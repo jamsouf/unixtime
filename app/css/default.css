@@ -28,10 +28,12 @@ a:hover {
 }
 
 input {
-   padding: 7px 10px;
-   border: none;
+   padding: 5px 15px;
+   border: 1px solid #E2C08D;
    border-radius: 4px;
-   font-size: 20px;
+   font-size: 22px;
+   background-color: transparent;
+   color: #F9F9F9;
 }
 
 h1 {
@@ -47,6 +49,12 @@ h1 {
    border-radius: 4px;
    background-color: #528BFF;
    font-size: 22px;
+   text-align: left;
+}
+
+.time-label.beige {
+   background-color: #E2C08D;
+   color: #21252B;
 }
 
 .note-label {
@@ -56,14 +64,27 @@ h1 {
    background-color: #FFFF73;
 }
 
-#unixtime-copied, #datetime-copied {
-   display: none;
+.unix-width {
+   width: 120px;
 }
 
-#unixtime-to-datetime {
-   margin-top:100px;
+.human-width {
+   width: 250px;
 }
 
-#datetime-to-unixtime {
-   margin-top:100px;
+.convert {
+   margin-top: 30px;
+}
+
+.convert .left {
+   display: inline-block;
+}
+
+.convert .middle {
+   display: inline-block;
+   margin: 0 20px;
+}
+
+.convert .right {
+   display: inline-block;
 }
