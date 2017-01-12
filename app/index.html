@@ -2,13 +2,14 @@
 <html>
 <head>
    <meta charset="UTF-8">
-   <title>unixtime</title>
+   <title>Unixtime</title>
    <link rel="stylesheet" href="css/font.css">
    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
    <link rel="stylesheet" href="css/default.css">
 </head>
 <body>
-   <h1>unixtime</h1>
+   <img src="img/icon.png">
+   <h1 style="margin-bottom:90px;">Unixtime</h1>
 
    <div id="current-unixtime" class="time-label" title="Click to copy"></div>
    <span id="unixtime-copied" class="note-label" style="display:none">Copied</span><br>
@@ -16,7 +17,7 @@
    <div id="current-datetime" class="time-label" title="Click to copy"></div>
    <span id="datetime-copied" class="note-label" style="display:none">Copied</span>
 
-   <div id="unixtime-to-datetime" class="convert" style="margin-top:120px">
+   <div id="unixtime-to-datetime" class="convert">
       <div class="left">
          <input id="input-unixtime" type="text" class="human-width" placeholder="Unixtime">
       </div>
@@ -40,6 +41,11 @@
       <div class="right">
          <input id="input-datetime" type="text" class="human-width" placeholder="mm/dd/yyyy hh:mm:ss">
       </div>
+   </div>
+
+   <div id="footer">
+      <a href="https://github.com/jamsouf/unixtime" class="ext"><i class="fa fa-github fa-2x"></i></a>
+      <a href="https://twitter.com/jamsouf" class="ext"><i class="fa fa-twitter fa-2x"></i></a>
    </div>
 
    <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>

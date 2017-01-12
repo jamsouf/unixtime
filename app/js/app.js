@@ -1,6 +1,7 @@
 var unixtime = (function() {
 
    const {clipboard} = require('electron');
+   const {shell} = require('electron');
    const datetime_format = 'MM/DD/YYYY HH:mm:ss';
    var exports = {};
 
@@ -41,7 +42,8 @@ var unixtime = (function() {
    var bindUnixChange = function () {
       $('#input-unixtime').keyup(function () {
          var unixtime = this.value.length > 0 ? parseInt(this.value) : '';
-         var result = (unixtime != '') ? moment.unix(unixtime).format(datetime_format) : '&nbsp;';
+         var result = (unixtime !== '') ? moment.unix(unixtime).format(datetime_format) : '&nbsp;';
+         console.log(result);
          result = (result == 'Invalid date') ? '<i class="fa fa-question"></i>' : result;
          $('#unixtime-to-datetime-result').html(result);
       });
@@ -53,8 +55,8 @@ var unixtime = (function() {
    var bindDatetimeChange = function () {
       $('#input-datetime').keyup(function () {
          var datetime = this.value;
-         var result = (datetime != '') ? moment(datetime, datetime_format).unix() : '&nbsp;';
-         result = (result != '&nbsp;' && isNaN(result)) ? '<i class="fa fa-question"></i>' : result;
+         var result = (datetime !== '') ? moment(datetime, datetime_format).unix() : '&nbsp;';
+         result = (result !== '&nbsp;' && isNaN(result)) ? '<i class="fa fa-question"></i>' : result;
          $('#datetime-to-unixtime-result').html(result);
       });
    };
@@ -67,6 +69,11 @@ var unixtime = (function() {
       bindCopy();
       bindUnixChange();
       bindDatetimeChange();
+
+      $('a.ext').click(function (e) {
+         e.preventDefault();
+         shell.openExternal(this.href);
+      });
    });
 
    return exports;
