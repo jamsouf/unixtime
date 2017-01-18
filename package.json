@@ -1,11 +1,31 @@
 {
-  "name": "unixtime",
-  "version": "1.0.0",
-  "description": " Simple app to convert unix timestamp - for Mac, Windows and Linux ",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/jamsouf/unixtime.git"
-  },
-  "license": "MIT",
-  "main": "main.js"
+   "name": "unixtime",
+   "productName": "unixtime",
+   "version": "1.0.0",
+   "description": " Simple app to convert unix timestamp - for Mac, Windows and Linux ",
+   "repository": {
+      "type": "git",
+      "url": "https://github.com/jamsouf/unixtime.git"
+   },
+   "author": {
+      "name": "Jamil Soufan",
+      "email": "jamil@soufan.de"
+   },
+   "license": "MIT",
+   "main": "main.js",
+   "devDependencies": {
+      "electron": "^1.4.3",
+      "electron-installer-debian": "^0.4.0",
+      "electron-installer-dmg": "^0.2.0",
+      "electron-packager": "^8.5.0",
+      "electron-winstaller": "^2.5.1"
+   },
+   "scripts": {
+      "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=app/assets/icons/mac/icon.icns --prune=true --out=release_builds",
+      "package-win": "electron-packager . --overwrite --asar=true --platform=win32 --arch=ia32 --icon=app/assets/icons/win/icon.ico --prune=true --out=release_builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"unixtime\"",
+      "package-linux": "electron-packager . --overwrite --platform=linux --arch=x64 --icon=app/assets/icons/png/1024x1024.png --prune=true --out=release_builds",
+      "create-installer-mac": "electron-installer-dmg ./release_builds/unixtime-darwin-x64/unixtime.app unixtime --out=dist --overwrite --icon=app/assets/icons/mac/icon.icns",
+      "create-installer-win": "node app/installers/windows/createinstaller.js",
+      "create-installer-deb": "electron-installer-debian --src release_builds/unixtime-linux-x64/ --dest dist/ --arch amd64 --icon=app/assets/icons/png/1024x1024.png"
+   }
 }

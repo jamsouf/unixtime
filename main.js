@@ -19,7 +19,14 @@ app.on('activate', () => {
 });
 
 function createWindow() {
-   win = new BrowserWindow({width: 800, height: 600});
+   win = new BrowserWindow({
+      width: 800,
+      height: 600,
+      minWidth: 800,
+      minHeight: 600,
+      icon: path.join(__dirname, 'app/assets/icons/png/64x64.png'),
+      backgroundColor: '#282C34'
+   });
 
    win.loadURL(url.format({
       pathname: path.join(__dirname, 'app/index.html'),
