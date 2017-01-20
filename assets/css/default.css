@@ -1,0 +1,60 @@
+body {
+   margin: 0;
+   padding: 0;
+   height: 100%;
+   text-align: center;
+   font-family: 'Alegreya Sans', sans-serif;
+   background: #44A08D; /* fallback for old browsers */
+   background: -webkit-linear-gradient(to left, #44A08D , #093637); /* Chrome 10-25, Safari 5.1-6 */
+   background: linear-gradient(to left, #44A08D , #093637); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+   color: #FFFFFF;
+}
+
+a {
+   display: inline-block;
+   text-decoration: none;
+   font-weight: 800;
+   color: #4EBFB9;
+   font-size: 14px;
+}
+
+a:hover {
+   color: #339993;
+}
+
+h1 {
+   margin: 0;
+   font-weight: 300;
+   font-size: 30px;
+   color: #F3F3F3;
+}
+
+h2 {
+   margin: 0;
+   font-size: 36px;
+}
+
+#download a {
+   width: 180px;
+   margin-bottom:10px;
+   line-height: 34px;
+   font-size: 18px;
+   font-weight: 400;
+   color: #FFFFFF;
+   text-decoration: none;
+}
+
+#download a:hover {
+   color: #C1C1C1;
+}
+
+#download i {
+   font-size: 32px;
+}
+
+#download .label {
+   padding: 1px 6px;
+   border-radius: 5px;
+   background-color: #50AA9E;
+   font-size: 14px;
+}
